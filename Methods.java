@@ -4,15 +4,15 @@ import java.util.Random;
 
 
 public class Methods {
-	private static Grid[][] grid = new Grid[10][10];
-	private  static int numOfBomb = 10;
-	public static void main(String[] args) {
-		creat();
-		setBomb();
-		show();
-	}
+	static Grid[][] grid = new Grid[10][10];
+	static int numOfBomb = 10;
+//	public static void main(String[] args) {
+//		Creat();
+//		SetBomb();
+//		Show();
+//	}
 	//Initializes a two-dimensional array
-	public static void creat() {
+	public static void Creat() {
 	for(int i = 0;i < grid.length;i++) {
 		for(int j = 0;j < grid[i].length;j++) {
 			grid[i][j] = new Grid();
@@ -23,7 +23,7 @@ public class Methods {
 	}
 
 	//Display game board
-	public static void show() {
+	public static void Show() {
 		System.out.println("x/y 0  1  2  3  4  5  6  7  8  9");
 		for(int i=0;i<grid.length;i++) {
 			System.out.print(i+" ");
@@ -41,7 +41,7 @@ public class Methods {
 		}
 	}
 	//Random bomb placement
-	public static void setBomb(){
+	public static void SetBomb(){
 		while(numOfBomb > 0){
 			Random ran = new Random();
 			int x = ran.nextInt(10);
@@ -53,7 +53,7 @@ public class Methods {
 		}
 	}
 	//Open the box
-	public static boolean click(int x,int y){
+	public static boolean Click(int x,int y){
 		if(grid[x][y].isState()){
 			System.out.println("This box has been opened, please select another box");
 			return true;
@@ -61,7 +61,7 @@ public class Methods {
 			//If it's a bomb.Game over
 			if(grid[x][y].getContent()=='*') {
 				//If it's a bomb.Game over
-				show();
+				Show();
 				return false;
 			}else {
 			    if(grid[x][y].getContent()==' ') {
