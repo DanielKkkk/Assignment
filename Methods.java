@@ -1,10 +1,14 @@
 package MineSweeping;
 
+import java.util.Random;
+
 
 public class Methods {
 	private static Grid[][] grid = new Grid[10][10];
+	private  static int numOfBomb = 10;
 	public static void main(String[] args) {
 		creat();
+		setBomb();
 		show();
 	}
 	//Initializes a two-dimensional array
@@ -24,13 +28,27 @@ public class Methods {
 		for(int i=0;i<grid.length;i++) {
 			System.out.print(i+" ");
 			for(int j=0;j<grid[i].length;j++) {
+				grid[i][j].setState(true);
 				if(grid[i][j].isState()) {
-					System.out.print(grid[i][j].getContent()+" ");
+//					System.out.print(grid[i][j].getContent()+" ");
+					System.out.printf("  %s",grid[i][j].getContent());
 				}else {
 				System.out.print(" []");
 				}
 			}
 			System.out.println();
+		}
+	}
+	//Random bomb placement
+	public static void setBomb(){
+		while(numOfBomb > 0){
+			Random ran = new Random();
+			int x = ran.nextInt(10);
+			int y = ran.nextInt(10);
+			if(grid[x][y].getContent() != '*'){
+				grid[x][y].setContent('*');
+				numOfBomb--;
+			}
 		}
 	}
 }
