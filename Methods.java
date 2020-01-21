@@ -28,7 +28,8 @@ public class Methods {
 		for(int i=0;i<grid.length;i++) {
 			System.out.print(i+" ");
 			for(int j=0;j<grid[i].length;j++) {
-				grid[i][j].setState(true);
+				//Test bomb
+//				grid[i][j].setState(true);
 				if(grid[i][j].isState()) {
 //					System.out.print(grid[i][j].getContent()+" ");
 					System.out.printf("  %s",grid[i][j].getContent());
@@ -49,6 +50,33 @@ public class Methods {
 				grid[x][y].setContent('*');
 				numOfBomb--;
 			}
+		}
+	}
+	//Open the box
+	public static boolean click(int x,int y){
+		if(grid[x][y].isState()){
+			System.out.println("This box has been opened, please select another box");
+			return true;
+		}else{
+			//If it's a bomb.Game over
+			if(grid[x][y].getContent()=='*') {
+				//If it's a bomb.Game over
+				show();
+				return false;
+			}else {
+			    if(grid[x][y].getContent()==' ') {
+			    /*If it's a blank space
+			      Continue judging until the space is surrounded by Numbers or bombs
+			     */
+				grid[x][y].setState(true);
+				return true;
+				//
+		    }else {
+				//If it's a number	
+				grid[x][y].setState(true);
+				return true;
+				}
+			}		
 		}
 	}
 }
