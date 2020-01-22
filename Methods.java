@@ -1,16 +1,15 @@
 package MineSweeping;
 
 import java.util.Random;
+import java.util.Scanner;
 
 
 public class Methods {
 	static Grid[][] grid = new Grid[10][10];
 	static int numOfBomb = 10;
-//	public static void main(String[] args) {
-//		Creat();
-//		SetBomb();
-//		Show();
-//	}
+	static Scanner stdin = new Scanner(System.in);
+
+
 	//Initializes a two-dimensional array
 	public static void Creat() {
 	for(int i = 0;i < grid.length;i++) {
@@ -79,6 +78,30 @@ public class Methods {
 			}		
 		}
 	}
+	
+	//Number of unopened boxes
+	public int Detection() {
+		int a=0;
+		for(int i=0;i<grid.length;i++) {
+			for(int j=0;j<grid[i].length;j++) {
+				if(grid[i][j].isState()==false) {
+					a++;
+				}
+			}
+
+		}
+		return a;
+	}
+	//Show all boxes when you step on thunder
+	public void ShowAll(){
+		for(int i=0;i<grid.length;i++) {
+			for(int j=0;j<grid[i].length;j++) {
+				grid[i][j].setState(true);
+			}
+		}
+	}
+	
+
 }
 
 class Grid {
