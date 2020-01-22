@@ -14,7 +14,7 @@ public class GAME {
 		{
 			for(int i=0;i<grid.length;i++)
 			{
-				if(grid[i][j].equals(" ")) {//???±éÀúÆåÅÌ
+				if(grid[i][j].equals("[ ]")) {
 					count++;
 				}
 			}
