@@ -19,9 +19,9 @@ public class Game{
 			System.out.println("Open grid:F，Mark the grid:M，cancel the mark:C");
 			String str = stdin.next();
 			if(str.equals("F")){
-			System.out.println("请输入X");
+			System.out.println("Please enter X:");
 			X = stdin.nextInt();
-			System.out.println("请输入Y");
+			System.out.println("Please enter Y:");
 			Y = stdin.nextInt();
 			boolean flag = meth.Click(X, Y);
 			if(!flag){
@@ -40,16 +40,16 @@ public class Game{
 			meth.Show();
 			}
 			else if(str.equals("M")){
-				System.out.println("请输入X");
+				System.out.println("Please enter X:");
 				X = stdin.nextInt();
-				System.out.println("请输入Y");
+				System.out.println("Please enter Y:");
 				Y = stdin.nextInt();
 //				meth.Mark(X, Y);
 			}
 			else if(str.equals("C")){
-				System.out.println("请输入X");
+				System.out.println("Please enter X:");
 				X = stdin.nextInt();
-				System.out.println("请输入Y");
+				System.out.println("Please enter Y:");
 				Y = stdin.nextInt();
 //				meth.CancelMark(X, Y);
 			}
