@@ -21,6 +21,7 @@ public class Methods {
 }
 
 //Mark the grid in the corresponding position 
+//but there are some problem need to be solved.
 public void Mark(int x, int y) {
 	grid[x][y].setMark(" ? ");
 }
