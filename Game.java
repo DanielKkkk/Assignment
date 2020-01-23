@@ -5,17 +5,16 @@ import java.util.Scanner;
 public class Game{
 
 	public static void main(String[] args){
+
 		Methods meth = new Methods();
 		meth.Creat();
 		meth.SetBomb();
 //		meth.produceDigital();
 		meth.Show();
 		
-		
 		int X,Y;
 		Scanner stdin = new Scanner(System.in);
 		while(true){
-			
 			System.out.println("Open grid:F，Mark the grid:M，cancel the mark:C");
 			String str = stdin.next();
 			if(str.equals("F")){
