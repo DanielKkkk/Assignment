@@ -52,37 +52,68 @@ public class Methods {
 			}
 		}
 	}
+	//Used to generate Numbers on each square to determine how many mines there are in the eight squares around that square
+	 public static void produceDigital() {
+		 for (int i = 0; i < grid.length; i++) {
+			 for (int j = 0; j < grid[i].length; j++) {
+		      // Use ASCII,48 means 0
+				 int z = 48;
+				 if (grid[i][j].getContent() != '*') {
+					 for (int x = i - 1; x < i + 2; x++) {
+						 for (int y = j - 1; y < j + 2; y++) {
+							 if (x >= 0 && x < 10 && y >= 0 && y < 10 && grid[x][y].getContent() == '*') {
+							 z++;
+							 }
+						 }
+					 }
+					 if (z == 48) {
+						 grid[i][j].setContent(' ');
+					 } else {
+						 grid[i][j].setContent((char) z);
+					 }
+				 }
+			 }
+		 }
 	
+	}
+		//Show all boxes when you step on thunder
+	 public void ShowAll(){
+		for(int i=0;i<grid.length;i++){
+			for(int j=0;j<grid[i].length;j++){
+				grid[i][j].setState(true);
+			}
+		}
+	}
+		
+		
 	//Open the box
-	public static boolean Click(int x,int y){
-		if(grid[x][y].isState()){
+		public static boolean Click(int x,int y){
+			if(grid[x][y].isState()){
 //			System.out.println("This box has been opened, please select another box");
-			return true;
-		}else{
+				return true;
+			}else{
 			//If it's a bomb.Game over
-			if(grid[x][y].getContent()=='*'){
+				if(grid[x][y].getContent()=='*'){
 				//If it's a bomb.Game over
-				Show();
-				return false;
-			}else {
-			    if(grid[x][y].getContent()==' '){
+					Show();
+					return false;
+				}else {
+					if(grid[x][y].getContent()==' '){
 			        /*
 			           If it's a blank space
 			           Continue judging until the space is surrounded by Numbers or bombs
 			        */
-			    	grid[x][y].setState(true);
-			    	clickBlank(x, y);
-			    	return true;
-			    }else {
+						grid[x][y].setState(true);
+						clickBlank(x, y);
+						return true;
+					}else {
 				//If it's a number	
-					grid[x][y].setState(true);
-					return true;
-				}
-			}		
+						grid[x][y].setState(true);
+						return true;
+					}
+				}		
+			}
 		}
-	}
-
-	
 
 	/*Click on the blank grid after the extension process
 	If the current cell is blank, go ahead and determine if there is white space above, below, right or left, and call the click method back
@@ -107,7 +138,7 @@ class Grid{
 	//Use as an instance model for each square
 	private char content;
 	private boolean state;//It describes the state of the square
-	private String mark;//
+	private String mark;//To construct a checkerboard two-dimensional array
 	public char getContent() {
 		return content;
 	}
