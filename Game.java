@@ -9,7 +9,7 @@ public class Game{
 		Methods meth = new Methods();
 		meth.Creat();
 		meth.SetBomb();
-//		meth.produceDigital();
+		meth.produceDigital();
 		meth.Show();
 		
 		int X,Y;
@@ -28,14 +28,13 @@ public class Game{
 				meth.Show();
 				System.out.println("Fail");
 				break;
+				}		
+			if(meth.UnOpened() == 10){
+				meth.ShowAll();
+				meth.Show();
+				System.out.println("successful");
+				break;
 				}
-//				
-//			if(meth.UnOpened() == 10){
-//				meth.ShowAll();
-//				meth.Show();
-//				System.out.println("successful");
-//				break;
-//				}
 			meth.Show();
 			}
 			else if(str.equals("M")){
@@ -43,7 +42,7 @@ public class Game{
 				X = stdin.nextInt();
 				System.out.println("Please enter Y:");
 				Y = stdin.nextInt();
-//				meth.Mark(X, Y);
+				meth.Mark(X, Y);
 			}
 			else if(str.equals("C")){
 				System.out.println("Please enter X:");
@@ -53,6 +52,10 @@ public class Game{
 //				meth.CancelMark(X, Y);
 			}
 	}
+		
+		
+		
+		
 //		switch (str) {
 //		case "F":
 //			System.out.println("请输入X");

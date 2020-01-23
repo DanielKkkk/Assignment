@@ -32,7 +32,7 @@ public class Methods {
 				if(grid[i][j].isState()) {
 //					System.out.print(grid[i][j].getContent()+" ");
 					System.out.printf("  %s",grid[i][j].getContent());
-				}else {
+				}else{
 //				System.out.print(" []");
 					System.out.print(grid[i][j].getMark());
 				}
@@ -93,12 +93,13 @@ public class Methods {
 				return true;
 			}else{
 			//If it's a bomb.Game over
-				if(grid[x][y].getContent()=='*'){
+				if(grid[x][y].getContent() == '*'){
 				//If it's a bomb.Game over
+//					grid[x][y].setState(true);
 					Show();
 					return false;
 				}else {
-					if(grid[x][y].getContent()==' '){
+					if(grid[x][y].getContent() == ' '){
 			        /*
 			           If it's a blank space
 			           Continue judging until the space is surrounded by Numbers or bombs
@@ -132,7 +133,25 @@ public class Methods {
 			Click(x,y+1);
 		}
 	}
+	public void Mark(int x, int y) {
+		grid[x][y].setMark("  ?");
+		Show();
+	}
+	// Number of unopened boxes
+		public int UnOpened() {
+			int box = 0;
+			for (int i = 0; i < grid.length; i++) {
+				for (int j = 0; j < grid[i].length; j++) {
+					if (grid[i][j].isState() == false) {
+						box++;
+					}
+				}
+
+			}
+			return box;
+		}
 }
+
  
 class Grid{
 	//Use as an instance model for each square
