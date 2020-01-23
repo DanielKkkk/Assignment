@@ -5,7 +5,9 @@ import java.util.*;
 public class CMUtility {
     private static Scanner scanner = new Scanner(System.in);
     /**
-	用于界面菜单的选择。该方法读取键盘，如果用户键入’1’-’3’中的任意字符，则方法返回。返回值为用户键入字符。
+	Used for interface menu selection. This method reads the keyboard.
+	If the user types any character in '1' - '3', the method returns. 
+	Return value to type characters for the user. 
 	*/
 	public static char readMenuSelection() {
         char c;
@@ -14,7 +16,7 @@ public class CMUtility {
             c = str.charAt(0);
             if (c != '1' && c != '2' && 
                 c != '3' ) {
-                System.out.print("选择错误，请重新输入：");
+                System.out.print("Selection error, please re-enter: ");
             } 
             else break;
         }
@@ -22,7 +24,7 @@ public class CMUtility {
     }
 
 	/**
-	从键盘读取一个字符，将其作为方法的返回值。
+	Reads a character from the keyboard as the return value of the method. 
 	*/
     public static char readChar() {
         String str = readKeyBoard(1, false);
@@ -30,8 +32,8 @@ public class CMUtility {
     }
 
 	/**
-	从键盘读取一个长度不超过1位的整数，并将其作为方法的返回值。
-	如果用户不输入字符而直接回车，方法将以defaultValue 作为返回值。
+Reads an integer no longer than 1 bit from the keyboard as the return value of the method.           
+If the user enters a carriage return directly without entering characters.
 	*/
     public static int readInt() {
         int n;
@@ -41,14 +43,15 @@ public class CMUtility {
                 n = Integer.parseInt(str);
                 break;
             } catch (NumberFormatException e) {
-                System.out.print("数字输入错误，请重新输入：");
+                System.out.print("Digital input error, please re-enter: ");
             }
         }
         return n;
     }
     
 	/**
-	用于确认选择的输入。该方法从键盘读取‘Y’或’N’，并将其作为方法的返回值。
+Used to confirm the selected input. 
+The method reads' y 'or' n 'from the keyboard as the return value of the method. 
 	*/
     public static char readConfirmSelection() {
         char c;
@@ -58,7 +61,7 @@ public class CMUtility {
             if (c == 'Y' || c == 'N') {
                 break;
             } else {
-                System.out.print("选择错误，请重新输入：");
+                System.out.print("Selection error, please re-enter: ");
             }
         }
         return c;
@@ -75,7 +78,7 @@ public class CMUtility {
             }
 
             if (line.length() < 1 || line.length() > limit) {
-                System.out.print("输入长度（不大于" + limit + "）错误，请重新输入：");
+                System.out.print("Input length (not greater than " + limit + "）Error, please re-enter: ");
                 continue;
             }
             break;
