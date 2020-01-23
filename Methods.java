@@ -29,10 +29,13 @@ public class Methods {
 			for(int j=0;j<grid[i].length;j++) {
 				//Test bomb
 //				grid[i][j].setState(true);
-				if(grid[i][j].isState()) {
+//				if(grid[i][j].getMark() == "  ?"){
+//					grid[i][j].setState(false);
+//				}else 
+				if(grid[i][j].isState() && grid[i][j].getMark() != "  ?") {
 //					System.out.print(grid[i][j].getContent()+" ");
 					System.out.printf("  %s",grid[i][j].getContent());
-				}else{
+				}else {
 //				System.out.print(" []");
 					System.out.print(grid[i][j].getMark());
 				}
@@ -135,6 +138,11 @@ public class Methods {
 	}
 	public void Mark(int x, int y) {
 		grid[x][y].setMark("  ?");
+		Show();
+	}
+	
+	public void CancelMark(int x,int y){
+		grid[x][y].setMark(" []");
 		Show();
 	}
 	// Number of unopened boxes
