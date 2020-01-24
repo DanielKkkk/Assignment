@@ -158,6 +158,43 @@ public class Methods {
 			}
 			return box;
 		}
+		
+		public void startjudge() {
+			  while (true) {
+				  Show();
+				  System.out.print("Please enter C to open the box and M to mark the box:");
+				  Scanner san = new Scanner(System.in);
+				  CMUtility std = new CMUtility();
+				  char command = std.readChar();
+				  if (command == 'C') {
+					  System.out.print("Select the Row:");
+					  int x = std.readInt();
+					  System.out.print("Select the Column:");
+					  int y = std.readInt();
+					  boolean flag = this.Click(x, y);
+					  if (!flag) {
+						  ShowAll();
+						  Show();
+						  System.out.println("Game Over");
+						  break;
+					  }
+				  } else if (command == 'M') {
+					  System.out.print("Select the Row:");
+					  int x = std.readInt();
+					  System.out.print("Select the Column:");
+					  int y = std.readInt();
+					  this.Mark(x, y);
+				  } else
+					  System.out.println("error");
+				  if (UnOpened() == 10) {
+					  ShowAll();
+					  Show();
+					  System.out.println("Successful");
+					  break;
+				  }
+			  }
+		}
+		
 }
 
  
