@@ -1,5 +1,7 @@
 package yaochuanliang;
 
+import yaochuanliang.game.Grid;
+
 public class start {
 	
 		 
@@ -45,7 +47,10 @@ public class start {
 		  new Game().start();
 
 		 }
-	
+		 
+		 public void Mark(int x, int y) {
+				grid[x][y].setMark(" ? ");
+			}
 
 
 		class Grid {
