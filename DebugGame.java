@@ -25,7 +25,7 @@ public class DebugGame{
 			boolean flag = meth.Click(X, Y);
 			if(!flag){
 				meth.ShowAll();
-				meth.Show();
+//				meth.Show();
 				System.out.println("Fail");
 				break;
 				}		

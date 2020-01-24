@@ -185,7 +185,7 @@ public class Methods {
 					  boolean flag = this.Click(x, y);
 					  if (!flag) {
 						  ShowAll();
-						  Show();
+//						  Show();
 						  System.out.println("Game Over");
 						  break;
 					  }
@@ -199,7 +199,7 @@ public class Methods {
 					  System.out.println("error");
 				  if (UnOpened() == 10) {
 					  ShowAll();
-					  Show();
+//					  Show();
 					  System.out.println("Successful");
 					  break;
 				  }
