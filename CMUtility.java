@@ -14,8 +14,7 @@ public class CMUtility {
         for (; ; ) {
             String str = readKeyBoard(1, false);
             c = str.charAt(0);
-            if (c != '1' && c != '2' && 
-                c != '3' ) {
+            if (c != '1' && c != '2' ) {
                 System.out.print("Selection error, please re-enter: ");
             } 
             else break;
