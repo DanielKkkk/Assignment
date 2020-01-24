@@ -81,12 +81,23 @@ public class Methods {
 	}
 		//Show all boxes when you step on thunder
 	 public void ShowAll(){
-		for(int i=0;i<grid.length;i++){
-			for(int j=0;j<grid[i].length;j++){
-				grid[i][j].setState(true);
+			System.out.println("x/y 0  1  2  3  4  5  6  7  8  9");
+			for(int i=0;i<grid.length;i++) {
+				System.out.print(i+" ");
+				for(int j=0;j<grid[i].length;j++) {
+					System.out.printf("  %s",grid[i][j].getContent());
+				}
+				System.out.println();
+				}
 			}
-		}
-	}
+		 
+//		for(int i=0;i<grid.length;i++){
+//			for(int j=0;j<grid[i].length;j++){
+//				grid[i][j].setState(true);
+//				System.out.printf("  %s",grid[i][j].getContent());
+//			}
+//		}
+	
 		
 		
 	//Open the box
